@@ -117,11 +117,7 @@ body {
 .navbar {
   height: 14vh;
   background-color: var(--primary-color) !important;
-  transition: all 0.3s ease-in;
-}
-
-.navbar.active {
-  background-color: var(--primary-color) !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar .container-fluid {
@@ -133,6 +129,7 @@ body {
 
 .container-fluid .navbar-collapse {
   flex-grow: 0;
+  transition: all 0.4s ease-in-out;
 }
 
 .navbar-brand img {
@@ -180,13 +177,12 @@ li > .nav-link:before {
 li > .nav-link:hover:before {
   padding-bottom: 5px;
   visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+  -webkit-transform: scaleX(0.8);
+  transform: scaleX(0.8);
 }
 
 li > .nav-link.active {
   color: #ff8e00;
-  transition: all 0.3s ease-in;
 }
 
 li > .nav-link.active:before {
@@ -196,12 +192,11 @@ li > .nav-link.active:before {
   height: 2px;
   bottom: 0;
   left: 26%;
+  border-bottom: 3px solid #ff8e00;
   padding-bottom: 5px;
   visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+  -webkit-transform: scaleX(0.8);
+  transform: scaleX(0.8);
 }
 
 .button-contact .btn {
@@ -272,6 +267,22 @@ li > .nav-link.active:before {
 
 .wrapper-images img {
   width: 30vw;
+  position: relative;
+  animation: updown 5s infinite;
+}
+
+@keyframes updown {
+  0% {
+    top: -15px;
+  }
+
+  50% {
+    top: 15px;
+  }
+
+  100% {
+    top: -15px;
+  }
 }
 
 /* ========= Section About ========= */
@@ -279,6 +290,7 @@ li > .nav-link.active:before {
 #about {
   padding-top: 8vw;
   height: auto;
+  overflow: hidden;
 }
 
 .header__about h2,
@@ -457,6 +469,7 @@ li > .nav-link.active:before {
 #ourportfolio {
   padding-top: 10vw;
   height: auto;
+  overflow: hidden;
 }
 
 .header__ourportfolio p {
@@ -510,7 +523,7 @@ li > .nav-link.active:before {
   padding-bottom: 1vw;
   margin: 0 2vw 5vw 2vw;
   background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .portfolios .item__portfolio.hide {
@@ -620,6 +633,7 @@ li > .nav-link.active:before {
 #ourservices {
   padding-top: 10vw;
   height: auto;
+  overflow: hidden;
 }
 
 .header__ourservices {
@@ -653,7 +667,8 @@ li > .nav-link.active:before {
   margin: 0 3vw 5vw 3vw;
   padding: 1.4vw 2vw 1vw 2vw;
   border-radius: 1vw;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease-in-out !important;
+  cursor: pointer;
 }
 
 .list__ourservices .inner__services:hover {
@@ -677,6 +692,7 @@ li > .nav-link.active:before {
 /* ========= Section Contact ========== */
 #contact {
   padding-top: 10vw;
+  overflow: hidden;
 }
 
 #contact .header__contact {
@@ -716,7 +732,7 @@ li > .nav-link.active:before {
   margin: 0 3vw 3vw 3vw;
   padding: 1.4vw 2vw 1vw 2vw;
   border-radius: 1vw;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .list__contact a {
@@ -728,7 +744,7 @@ li > .nav-link.active:before {
   font-weight: 600;
   text-decoration: none;
   color: var(--font-color-primary);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease-in-out !important;
   margin: 0 3vw 5vw 3vw;
   padding: 1vw 2vw;
   border-radius: 1vw;
@@ -825,7 +841,7 @@ li > .nav-link.active:before {
   color: var(--font-color-primary);
   font-weight: 500;
   font-size: 1vw;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .footer__links ul li a:hover,
@@ -865,7 +881,7 @@ li > .nav-link.active:before {
   border-radius: 50%;
   margin-right: 1vw;
   margin-top: 0.5vw;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease !important;
 }
 
 .list__social .inner__social:hover {
@@ -999,7 +1015,7 @@ li > .nav-link.active:before {
 
   #about {
     height: auto;
-    padding-top: 8vw;
+    padding-top: 10vw;
   }
 
   .header__about h2,
@@ -1126,7 +1142,7 @@ li > .nav-link.active:before {
   .portfolios .item__portfolio {
     width: 36vw;
     height: 30vw;
-    margin: 0 5vw 7vw 5vw;
+    margin: 7vw 5vw 0 5vw;
   }
 
   .item__portfolio .image__portfolio {
@@ -1167,6 +1183,7 @@ li > .nav-link.active:before {
   /* ========= Our Services ========= */
   #ourservices {
     height: auto;
+    padding-top: 10vw;
   }
 
   .header__ourservices p {
@@ -1191,7 +1208,7 @@ li > .nav-link.active:before {
 
   /* ======== Section Our Contact ======= */
   #contact {
-    padding-top: 12vw;
+    padding-top: 10vw;
   }
 
   #contact .header__contact {
@@ -1213,7 +1230,6 @@ li > .nav-link.active:before {
 
   /* ======== Section Footer ========= */
   .footer {
-    margin-top: 5vw;
     padding-top: 10vw;
     padding-bottom: 0;
     margin-left: 3vw;
@@ -1368,7 +1384,7 @@ li > .nav-link.active:before {
 
   /* ========= Section About ========= */
   #about {
-    padding-top: 16vw;
+    padding-top: 15vw;
     height: auto;
   }
 
@@ -1458,7 +1474,7 @@ li > .nav-link.active:before {
 
   /* ========= Section Ourteam ========= */
   #ourteam {
-    padding-top: 16vw;
+    padding-top: 15vw;
     height: auto;
   }
 
@@ -1496,7 +1512,7 @@ li > .nav-link.active:before {
     justify-content: center;
     align-items: center;
     /* margin-top: 50vw; */
-    padding-top: 20vw;
+    padding-top: 15vw;
     height: auto;
   }
 
@@ -1515,7 +1531,7 @@ li > .nav-link.active:before {
   }
 
   .portfolios {
-    margin-top: 20vw;
+    margin-top: 5vw;
   }
 
   .portfolios .typography__portfolio {
@@ -1539,7 +1555,7 @@ li > .nav-link.active:before {
   .portfolios .item__portfolio {
     width: 80vw;
     height: 80vw;
-    margin: 0 5vw 25vw 5vw;
+    margin: 15vw 5vw 0 5vw;
   }
 
   .item__portfolio .typography__portfolio {
@@ -1649,7 +1665,8 @@ li > .nav-link.active:before {
 
   /* ======== Section Footer ======= */
   .footer {
-    padding-top: 40vw;
+    padding-top: 15vw;
+    margin-top: 0;
     display: flex;
     margin-right: 5vw;
     justify-content: center;

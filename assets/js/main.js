@@ -14,13 +14,11 @@
   });
 })(jQuery);
 
-// Transition Bar
+// Transition Navbar
 $(window).on("scroll", function () {
   if ($(window).scrollTop() > 50) {
-    $(".navbar").addClass("active");
     $(".navbar").addClass("shadow-sm");
   } else {
-    $(".navbar").removeClass("active");
     $(".navbar").removeClass("shadow-sm");
   }
 });
@@ -39,7 +37,6 @@ function activeMenu() {
 activeMenu();
 window.addEventListener("scroll", activeMenu);
 
-// Swiper Js
 const swiper = new Swiper(".swiper", {
   loop: true,
   slidesPerView: 2,
