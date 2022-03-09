@@ -534,6 +534,7 @@ li > .nav-link.active:before {
   border-radius: 0px;
   background: var(--primary-color);
   box-shadow: 8px 8px 18px #c7c7c7, -8px -8px 18px #c7c7c7;
+  transition: all 0.3s ease !important;
 }
 
 .item__portfolio .image__portfolio {
